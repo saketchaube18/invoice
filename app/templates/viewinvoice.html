@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form action={% url 'viewinvoice' %} method="post">
+    {% csrf_token %}
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Invoice Date</th>
+            <th scope="col">Invoice Number</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Invoice Duedate</th>
+            <th scope="col">Product</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Total</th>
+            <th scope="col">Delete Invoice</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in invoice1 %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.invoice_date}}</td>
+            <td>{{i.invoice_number}}</td>
+            <td>{{i.customer_name}}</td>
+            <td>{{i.invoice_duedate}}</td>
+            <td>{{i.Product}}</td>
+            <td>{{i.Quantity}}</td>
+            <td>{{i.Rate}}</td>
+            <td>{{i.Total}}</td>
+            <td> <a class="btn btn-danger" href="{% url 'deleteinvoice' i.id %}"> Delete </a> </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+

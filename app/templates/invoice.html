@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 'invoice' %}" method="post">
+    {% csrf_token %}
+
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Invoice Date</label>
+    <input type="date" class="form-control" id="date" name="date" placeholder="Enter Date">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Invoice Number</label>
+    <input type="Number" class="form-control" id="invoice_n" name="invoice_n" placeholder="Enter Number">
+  </div>
+ 
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Customer Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+  </div>
+ 
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Invoice Duedate</label>
+    <input type="date" class="form-control" id="duedate" name="duedate" placeholder="Enter Date">
+  </div>
+
+
+
+
+  <table class="table table-bordered border-primary" id="invoicerow">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Total</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><input type="text" class="form-control" id="product" name="product"></td>
+        <td><input type="Number" class="form-control" id="qty" name="qty"></td>
+        <td><input type="Number" class="form-control" id="rate" name="rate"></td>
+        <td><input type="Number" class="form-control" id="total" name="total"></td>
+      </tr>
+     
+    </tbody>
+  </table>
+<br>
+<br>
+<br>
+
+<button type="submit" class="btn">submit</button>
+
+</form>
+
+ 
+ {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+

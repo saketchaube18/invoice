@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action ="{% url 'register' %}" method ="post">
+    {% csrf_token %} 
+   <div class="mb-3">
+       <label for="FormControl" class="form-label">First name</label>
+       <input type="text" class="form-control" id="fname" name="fname" placeholder="enter your first name">
+     </div>
+     <div class="mb-3">
+       <label for="FormControl" class="form-label">Last name</label>
+       <input type="text" class="form-control" id="lname" name="lname" placeholder="enter your last name">
+     </div>
+     <div class="mb-3">
+       <label for="FormControl" class="form-label">Email address</label>
+       <input type="email" class="form-control" id="email" name="email" placeholder="enter your email">
+     </div>
+     <div class="mb-3">
+       <label for="FormControl" class="form-label">password</label>
+       <input type="password" class="form-control" id="password" name="password" placeholder="enter your password">
+      
+     <br>
+     <br>
+     <button type="submit" class="btn btn-primary">submit</button>
+   
+     
+   </form>
+
+
+
+
+
+
+
+
+{% endblock content %}
