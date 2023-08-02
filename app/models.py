@@ -13,7 +13,3 @@ class Invoice(models.Model):
     Rate=models.CharField(max_length=50,null=True,blank=True)
     Total=models.CharField(max_length=50,null=True,blank=True)
     #user=models.ForeignKey(User,related_name="invoice", on_delete=models.DO_NOTHING)
-
-
-    def __str__(self):
-        return self.title
