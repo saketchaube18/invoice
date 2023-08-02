@@ -12,7 +12,7 @@ class Invoice(models.Model):
     Quantity=models.CharField(max_length=20,null=True,blank=True)
     Rate=models.CharField(max_length=50,null=True,blank=True)
     Total=models.CharField(max_length=50,null=True,blank=True)
-    user=models.ForeignKey(User,related_name="invoice", on_delete=models.DO_NOTHING)
+    #user=models.ForeignKey(User,related_name="invoice", on_delete=models.DO_NOTHING)
 
 
     def __str__(self):
